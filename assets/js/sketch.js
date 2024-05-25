@@ -7,7 +7,7 @@ let modelLoaded = false;
 
 function setup() {
   // Create canvas
-  createCanvas(1020, 720);
+  createCanvas(1320, 800);
   video = createCapture(VIDEO);
   video.size(width, height);
   // Create poseNet method
