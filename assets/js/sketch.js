@@ -9,7 +9,7 @@ let modelLoaded = false;
 
 function setup() {
   // Create canvas
-  createCanvas(500, 500);
+  createCanvas(1020, 720);
   video = createCapture(VIDEO);
   video.size(width, height);
   // Create poseNet method
@@ -63,7 +63,7 @@ function drawSkeleton() {
   }
 }
 
-function drawRings() {
+function drawBorders() {
   xSpot = width * 0.45;
   ySpot = height * 0.85;
   border = new borders.Sprite(
