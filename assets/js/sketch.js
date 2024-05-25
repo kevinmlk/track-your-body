@@ -1,5 +1,3 @@
-'use strict';
-
 // Global variables
 let video;
 let poseNet;
