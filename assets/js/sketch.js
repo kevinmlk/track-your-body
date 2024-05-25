@@ -62,3 +62,47 @@ function drawSkeleton() {
     }
   }
 }
+
+function drawRings() {
+  xSpot = width * 0.45;
+  ySpot = height * 0.85;
+  border = new borders.Sprite(
+    xSpot,
+    ySpot + height * 0.04,
+    width * 0.1,
+    width * 0.01
+  );
+  border = new borders.Sprite(
+    xSpot - width * 0.05,
+    ySpot,
+    width * 0.01,
+    height * 0.1
+  );
+  border = new borders.Sprite(
+    xSpot + width * 0.05,
+    ySpot,
+    width * 0.01,
+    height * 0.1
+  );
+
+  xSpot = width * 0.75;
+  ySpot = height * 0.55;
+  border = new borders.Sprite(
+    xSpot,
+    ySpot + height * 0.04,
+    width * 0.1,
+    width * 0.01
+  );
+  border = new borders.Sprite(
+    xSpot - width * 0.05,
+    ySpot,
+    width * 0.01,
+    height * 0.1
+  );
+  border = new borders.Sprite(
+    xSpot + width * 0.05,
+    ySpot,
+    width * 0.01,
+    height * 0.1
+  );
+}
