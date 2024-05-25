@@ -5,16 +5,27 @@ let video;
 let poseNet;
 let ball;
 let poses = [];
-let modalLeaded = false;
+let modelLoaded = false;
 
-const setup = () => {
-  console.log('Conent loaded');
+function setup() {
+  createCanvas(500, 500);
+  video = createCapture(VIDEO);
+  video.size(width, height);
+  poseNet = ml5.poseNet(video, modelReady);
+  poseNet.on("pose", function (results) {
+    poses = results;
+  });
+  video.hide();
 }
 
 // Function that tells that the modal is ready
-const modalReady = () => {
-  console.log('modal ready');
-  modalLeaded = true;
+function modelReady() {
+  document.querySelector("#status").textContent = "Model Loaded";
+  modelLoaded = true;
 }
 
-window.addEventListener('DOMContentLoaded', setup);
+function draw() {
+  if (modelLoaded) {
+    image(video, 0, 0, width, height);
+  }
+}
