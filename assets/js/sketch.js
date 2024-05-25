@@ -16,6 +16,18 @@ function setup() {
     poses = results;
   });
   video.hide();
+
+  limbs = new Group(); // skeleton parts
+  limbs.collider = "static";
+  limbs.color = "blue";
+  balls = new Group();
+  world.gravity.y = 9;
+  borders = new Group();
+  borders.collider = "static";
+  borders.color = "yellow";
+  drawBorders();
+  ball = new balls.Sprite(xSpot, ySpot, width * 0.05);
+  balls.color = "red";
 }
 
 // Function that tells that the model is ready
@@ -28,6 +40,18 @@ function modelReady() {
 function draw() {
   if (modelLoaded) {
     image(video, 0, 0, width, height);
+    limbs.removeAll(); // constantly removing the limbs or they would just multiply
+    drawSkeleton();
+    print(balls.length);
+    cam = get();
+    translate(cam.width, 0);
+    scale(-1, 1);
+    image(cam, 0, 0);
+    if (ball.y > height) {
+      //replace ball if it falls
+      balls.cull(0);
+      ball = new balls.Sprite(xSpot, ySpot, width * 0.05);
+    }
   }
 }
 
@@ -62,8 +86,8 @@ function drawSkeleton() {
 }
 
 function drawBorders() {
-  xSpot = width * 0.45;
-  ySpot = height * 0.85;
+  xSpot = width * 0.25;
+  ySpot = height * 0.35;
   border = new borders.Sprite(
     xSpot,
     ySpot + height * 0.04,
@@ -90,17 +114,5 @@ function drawBorders() {
     ySpot + height * 0.04,
     width * 0.1,
     width * 0.01
-  );
-  border = new borders.Sprite(
-    xSpot - width * 0.05,
-    ySpot,
-    width * 0.01,
-    height * 0.1
-  );
-  border = new borders.Sprite(
-    xSpot + width * 0.05,
-    ySpot,
-    width * 0.01,
-    height * 0.1
   );
 }
