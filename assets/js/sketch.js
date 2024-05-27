@@ -19,7 +19,7 @@ function setup() {
 
   limbs = new Group(); // skeleton parts
   limbs.collider = "static";
-  limbs.color = "blue";
+  limbs.color = "#003399";
   balls = new Group();
   world.gravity.y = 9;
   borders = new Group();
