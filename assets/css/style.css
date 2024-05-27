@@ -1,7 +1,25 @@
+:root {
+  --xd-black: #0c0b0b;
+  --xd-white: rgb(250, 250, 250);
+  --xd-text-gray: rgba(var(--xd-white), .6);
+}
+
+body {
+  background-color: var(--xd-black);
+  color: var(--xd-white);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
 canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
   border: 1px solid black;
+  margin-bottom: 3rem;
 }

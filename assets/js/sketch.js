@@ -7,7 +7,7 @@ let modelLoaded = false;
 
 function setup() {
   // Create canvas
-  createCanvas(1320, 800);
+  createCanvas(1300, 800);
   video = createCapture(VIDEO);
   video.size(width, height);
   // Create poseNet method
@@ -24,10 +24,10 @@ function setup() {
   world.gravity.y = 9;
   borders = new Group();
   borders.collider = "static";
-  borders.color = "yellow";
+  borders.color = "#FFCD00";
   drawBorders();
   ball = new balls.Sprite(xSpot, ySpot, width * 0.05);
-  balls.color = "red";
+  balls.color = "#C8102E";
 }
 
 // Function that tells that the model is ready
